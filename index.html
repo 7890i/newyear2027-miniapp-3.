@@ -1,155 +1,160 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#10182c">
-<title>New Year Gifts 2027</title>
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
-<style>
-:root{color-scheme:dark;--bg:#0d1426;--panel:#17223a;--panel2:#202e4a;--text:#f5f7ff;--muted:#aab7d0;--line:rgba(255,255,255,.10);--gold:#f6cf78;--accent:#8db6ff}
-*{box-sizing:border-box}body{margin:0;min-height:100vh;color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(ellipse at 50% -20%,#354b76 0%,#131d34 48%,var(--bg) 80%)}
-button,input{font:inherit}.app{width:min(100%,760px);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 16px max(28px,env(safe-area-inset-bottom))}
-.hero{position:relative;overflow:hidden;text-align:center;padding:27px 18px 23px;border:1px solid var(--line);border-radius:26px;background:linear-gradient(140deg,rgba(61,91,142,.55),rgba(29,42,70,.76));box-shadow:0 18px 60px rgba(0,0,0,.22)}
-.hero:before,.hero:after{content:"✦";position:absolute;color:rgba(255,255,255,.28);font-size:25px}.hero:before{left:22px;top:25px}.hero:after{right:26px;bottom:22px}
-.eyebrow{color:#d8e4ff;letter-spacing:.16em;text-transform:uppercase;font-size:10px;font-weight:800}h1{margin:9px 0 6px;font-size:clamp(27px,7vw,39px);line-height:1.05;letter-spacing:-.04em}.subtitle{margin:0;color:#d0dcf2;font-size:13px}
-.stats{display:flex;justify-content:center;gap:9px;margin-top:17px;flex-wrap:wrap}.stat{padding:7px 11px;border-radius:999px;background:rgba(9,16,31,.32);color:#edf2ff;font-size:11px;border:1px solid rgba(255,255,255,.10)}
-.status{margin:12px 2px 0;text-align:center;color:var(--muted);font-size:12px;line-height:1.5}.search-wrap{margin:17px 0 13px;position:relative}.search{width:100%;border:1px solid var(--line);border-radius:15px;padding:13px 15px 13px 42px;color:var(--text);background:rgba(23,34,58,.92);outline:none}.search:focus{border-color:rgba(141,182,255,.7)}.search-icon{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--muted)}
-.categories{display:flex;gap:8px;overflow-x:auto;padding:2px 0 10px;scrollbar-width:none}.categories::-webkit-scrollbar{display:none}.chip{white-space:nowrap;border:1px solid var(--line);color:#d9e2f5;background:rgba(23,34,58,.84);padding:9px 12px;border-radius:999px;font-size:12px;cursor:pointer}.chip.active{color:#13213c;background:#dbe7ff;border-color:#dbe7ff;font-weight:800}
-.section-head{display:flex;justify-content:space-between;align-items:center;margin:12px 2px 11px;gap:12px}.section-head h2{margin:0;font-size:17px}.count{color:var(--muted);font-size:11px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.gift{min-width:0;text-align:left;padding:0;overflow:hidden;border:1px solid var(--line);border-radius:19px;background:linear-gradient(160deg,rgba(31,46,75,.98),rgba(20,30,51,.98));color:var(--text);cursor:pointer;transition:transform .15s,border-color .15s}.gift:active{transform:scale(.98)}.art{height:148px;display:grid;place-items:center;position:relative;background:radial-gradient(circle at 50% 42%,rgba(125,161,224,.24),rgba(18,29,50,.15) 67%);overflow:hidden}.gift-img{width:100%;height:100%;object-fit:contain;padding:9px}.emoji{font-size:65px;filter:drop-shadow(0 9px 11px rgba(0,0,0,.28))}.rarity-dot{position:absolute;top:10px;left:10px;padding:5px 8px;border-radius:999px;font-size:10px;font-weight:800;background:rgba(7,14,27,.72);border:1px solid var(--line)}.gift-info{padding:11px 12px 12px}.gift-name{font-size:13px;line-height:1.25;font-weight:750;min-height:33px;overflow-wrap:anywhere}.gift-bottom{display:flex;justify-content:space-between;align-items:center;gap:6px;margin-top:9px}.price{color:var(--gold);font-size:13px;font-weight:850;white-space:nowrap}.details{color:var(--muted);font-size:10px}.empty{display:none;grid-column:1/-1;text-align:center;color:var(--muted);padding:32px 12px;border:1px dashed var(--line);border-radius:18px;line-height:1.5}.note{margin:18px 2px 0;color:var(--muted);font-size:11px;line-height:1.5;text-align:center}
-.modal-backdrop{display:none;position:fixed;inset:0;z-index:10;padding:18px;align-items:center;justify-content:center;background:rgba(3,8,18,.78);backdrop-filter:blur(7px)}.modal-backdrop.open{display:flex}.modal{width:min(100%,390px);max-height:min(88vh,700px);overflow:auto;border:1px solid var(--line);border-radius:24px;padding:20px;background:#17233b;box-shadow:0 24px 80px rgba(0,0,0,.45);text-align:center}.modal-art{height:220px;display:grid;place-items:center;margin:2px 0 12px;border-radius:17px;background:rgba(10,17,31,.35);overflow:hidden}.modal-art img{width:100%;height:100%;object-fit:contain;padding:8px}.modal-art .emoji{font-size:90px}.modal h3{margin:3px 0 7px;font-size:21px}.modal-rarity{color:#c4d5f6;font-size:12px}.modal-price{color:var(--gold);font-weight:900;font-size:18px;margin:12px 0}.modal-note{color:var(--muted);font-size:12px;line-height:1.5}.close{margin-top:17px;border:0;border-radius:13px;padding:11px 20px;color:#17233b;background:#dbe7ff;font-weight:800;cursor:pointer;width:100%}
-@media(min-width:600px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.art{height:165px}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10182c">
+  <title>New Year Gifts 2027</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    :root{color-scheme:dark;--bg:#0d1426;--panel:#17223a;--panel2:#202e4a;--text:#f5f7ff;--muted:#aab7d0;--line:rgba(255,255,255,.1);--gold:#f6cf78;--accent:#8db6ff}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(ellipse at 50% -20%,#354b76 0%,#131d34 48%,var(--bg) 80%)}
+    button,input{font:inherit}.app{width:min(100%,780px);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 16px max(28px,env(safe-area-inset-bottom))}
+    .hero{position:relative;overflow:hidden;text-align:center;padding:27px 18px 23px;border:1px solid var(--line);border-radius:26px;background:linear-gradient(140deg,rgba(61,91,142,.55),rgba(29,42,70,.76));box-shadow:0 18px 60px rgba(0,0,0,.22)}
+    .hero:before,.hero:after{content:"✦";position:absolute;color:rgba(255,255,255,.28);font-size:25px}.hero:before{left:22px;top:25px}.hero:after{right:26px;bottom:22px}
+    .eyebrow{color:#d8e4ff;letter-spacing:.16em;text-transform:uppercase;font-size:10px;font-weight:800}h1{margin:9px 0 6px;font-size:clamp(27px,7vw,39px);line-height:1.05;letter-spacing:-.04em}.subtitle{margin:0;color:#d0dcf2;font-size:13px}
+    .stats{display:flex;justify-content:center;gap:9px;margin-top:17px;flex-wrap:wrap}.stat{padding:7px 11px;border-radius:999px;background:rgba(9,16,31,.32);color:#edf2ff;font-size:11px;border:1px solid rgba(255,255,255,.1)}
+    .status{margin:12px 2px 0;text-align:center;color:var(--muted);font-size:12px;line-height:1.5}.status.error{color:#ffb7b7}
+    .search-wrap{margin:17px 0 13px;position:relative}.search{width:100%;border:1px solid var(--line);border-radius:15px;padding:13px 15px 13px 42px;color:var(--text);background:rgba(23,34,58,.92);outline:none}.search:focus{border-color:rgba(141,182,255,.7)}.search-icon{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--muted)}
+    .categories{display:flex;gap:8px;overflow-x:auto;padding:2px 0 10px;scrollbar-width:none}.categories::-webkit-scrollbar{display:none}.chip{white-space:nowrap;border:1px solid var(--line);color:#d9e2f5;background:rgba(23,34,58,.84);padding:9px 12px;border-radius:999px;font-size:12px;cursor:pointer}.chip.active{color:#13213c;background:#dbe7ff;border-color:#dbe7ff;font-weight:800}
+    .section-head{display:flex;justify-content:space-between;align-items:center;margin:12px 2px 11px;gap:12px}.section-head h2{margin:0;font-size:17px}.count{color:var(--muted);font-size:11px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.gift{min-width:0;text-align:left;padding:0;overflow:hidden;border:1px solid var(--line);border-radius:19px;background:linear-gradient(160deg,rgba(31,46,75,.98),rgba(20,30,51,.98));color:var(--text);cursor:pointer;transition:transform .15s,border-color .15s}.gift:active{transform:scale(.98)}
+    .art{height:160px;display:grid;place-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 42%,rgba(125,161,224,.24),rgba(18,29,50,.15) 67%)}.art img{width:100%;height:100%;object-fit:contain;padding:8px}.art-placeholder{font-size:65px;filter:drop-shadow(0 9px 11px rgba(0,0,0,.28))}
+    .rarity-dot{position:absolute;top:10px;left:10px;padding:5px 8px;border-radius:999px;font-size:10px;font-weight:800;background:rgba(7,14,27,.72);border:1px solid var(--line)}.gift-info{padding:11px 12px 12px}.gift-name{font-size:13px;line-height:1.25;font-weight:750;min-height:33px}.gift-bottom{display:flex;justify-content:space-between;align-items:center;gap:6px;margin-top:9px}.price{color:var(--gold);font-size:13px;font-weight:850;white-space:nowrap}.details{color:var(--muted);font-size:10px}.empty{display:none;grid-column:1/-1;text-align:center;color:var(--muted);padding:32px 12px;border:1px dashed var(--line);border-radius:18px}
+    .note{margin:18px 2px 0;color:var(--muted);font-size:11px;line-height:1.5;text-align:center}.modal-backdrop{display:none;position:fixed;inset:0;z-index:10;padding:18px;align-items:center;justify-content:center;background:rgba(3,8,18,.76);backdrop-filter:blur(7px)}.modal-backdrop.open{display:flex}.modal{width:min(100%,390px);border:1px solid var(--line);border-radius:24px;padding:20px;background:#17233b;box-shadow:0 24px 80px rgba(0,0,0,.45);text-align:center}.modal-art{height:210px;display:grid;place-items:center;margin-bottom:10px}.modal-art img{max-width:100%;max-height:100%;object-fit:contain}.modal-art .art-placeholder{font-size:82px}.modal h3{margin:3px 0 7px;font-size:21px}.modal-rarity{color:#c4d5f6;font-size:12px}.modal-price{color:var(--gold);font-weight:900;font-size:18px;margin:12px 0}.modal-note{color:var(--muted);font-size:12px;line-height:1.5}.close{margin-top:17px;border:0;border-radius:13px;padding:11px 20px;color:#17233b;background:#dbe7ff;font-weight:800;cursor:pointer;width:100%}
+    @media(min-width:600px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.art{height:180px}}
+  </style>
 </head>
 <body>
 <main class="app">
-<header class="hero">
-  <div class="eyebrow">праздничная коллекция</div>
-  <h1>🎄 New Year 2027</h1>
-  <p class="subtitle">Маленькие чудеса большой зимы</p>
-  <div class="stats"><span class="stat" id="giftStat">🎁 Загружаем подарки…</span><span class="stat">✦ 6 редкостей</span><span class="stat">⭐ Цены для витрины</span></div>
-</header>
-<p class="status" id="status" role="status">Подключаем GIF из коллекции…</p>
-<div class="search-wrap"><span class="search-icon">⌕</span><input id="search" class="search" type="search" placeholder="Найти подарок…" autocomplete="off" aria-label="Найти подарок"></div>
-<nav class="categories" id="categories" aria-label="Категории"></nav>
-<div class="section-head"><h2 id="sectionTitle">Все подарки</h2><span class="count" id="count"></span></div>
-<section class="grid" id="grid" aria-live="polite"><div class="empty" id="empty">Пока не удалось загрузить GIF. Проверь, что анимации находятся в папках коллекции.</div></section>
-<p class="note">Демонстрационная витрина. Цены указаны только для примера. Здесь нет покупок, оплаты или списания Stars.</p>
+  <header class="hero">
+    <div class="eyebrow">праздничная коллекция</div>
+    <h1>🎄 New Year 2027</h1>
+    <p class="subtitle">Маленькие чудеса большой зимы</p>
+    <div class="stats"><span class="stat" id="giftStat">🎁 Загружаем подарки…</span><span class="stat">✦ 6 редкостей</span><span class="stat">⭐ Цены для витрины</span></div>
+  </header>
+  <p class="status" id="status" role="status">Ищем GIF в папках твоего GitHub-репозитория…</p>
+  <div class="search-wrap"><span class="search-icon">⌕</span><input id="search" class="search" type="search" placeholder="Найти подарок…" autocomplete="off" aria-label="Найти подарок"></div>
+  <nav class="categories" id="categories" aria-label="Категории"></nav>
+  <div class="section-head"><h2 id="sectionTitle">Все подарки</h2><span class="count" id="count"></span></div>
+  <section class="grid" id="grid" aria-live="polite"><div class="empty" id="empty">Подарки пока не найдены.</div></section>
+  <p class="note">Демонстрационная витрина. Цены указаны только для примера. Здесь нет оплаты и списания Stars.</p>
 </main>
 <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalName">
-  <div class="modal"><div class="modal-art" id="modalArt"></div><div class="modal-rarity" id="modalRarity"></div><h3 id="modalName"></h3><div class="modal-price" id="modalPrice"></div><p class="modal-note">Демонстрационная карточка подарка. Покупки и оплата не подключены.</p><button class="close" id="closeModal" type="button">Закрыть</button></div>
+  <div class="modal"><div class="modal-art" id="modalArt"></div><div class="modal-rarity" id="modalRarity"></div><h3 id="modalName"></h3><div class="modal-price" id="modalPrice"></div><p class="modal-note">Это демонстрационная карточка подарка. Покупка и оплата не подключены.</p><button class="close" id="closeModal" type="button">Закрыть</button></div>
 </div>
 <script>
-const OWNER = '7890i';
-const REPO = 'newyear2027-miniapp-3.';
-const groups = [
-  {id:'common',name:'Common',label:'🟢 Common',price:50,color:'#9cdda9',paths:['gifts/common','common'],fallback:'🎁'},
-  {id:'rare',name:'Rare',label:'🔵 Rare',price:150,color:'#8dbbff',paths:['rare','gifts/rare'],fallback:'❄️'},
-  {id:'epic',name:'Epic',label:'🟣 Epic',price:200,color:'#c6a0ff',paths:['epic','gifts/epic'],fallback:'🌟'},
-  {id:'legendary',name:'Legendary',label:'🟡 Legendary',price:300,color:'#f3d17f',paths:['legendary','gifts/legendary'],fallback:'👑'},
-  {id:'mythic',name:'Mythic',label:'🌈 Mythic',price:350,color:'#f0a8df',paths:['mythic','gifts/mythic'],fallback:'🌌'},
-  {id:'secret',name:'Secret',label:'💠 Secret',price:400,color:'#8fe4e6',paths:['secret','gifts/secret'],fallback:'💠'}
-];
-let gifts=[];
-let active='all';
-const grid=document.getElementById('grid');
-const categories=document.getElementById('categories');
-const search=document.getElementById('search');
-const empty=document.getElementById('empty');
-function cleanName(filename,index){
-  let name=filename.replace(/\.[^.]+$/,'').replace(/^\d+\s*[_\-. )]+/,'').replace(/[_-]+/g,' ').replace(/\s+/g,' ').trim();
-  return name || `Подарок ${index+1}`;
-}
-async function readFolder(path){
-  const encoded=path.split('/').map(encodeURIComponent).join('/');
-  const url=`https://api.github.com/repos/${OWNER}/${encodeURIComponent(REPO)}/contents/${encoded}?ref=main`;
-  const response=await fetch(url,{headers:{Accept:'application/vnd.github+json'}});
-  if(!response.ok) return [];
-  const data=await response.json();
-  if(!Array.isArray(data)) return [];
-  return data.filter(file=>file.type==='file' && /\.gif$/i.test(file.name))
-    .sort((a,b)=>a.name.localeCompare(b.name,'ru',{numeric:true}));
-}
-async function loadGroup(group){
-  for(const path of group.paths){
-    try{
-      const files=await readFolder(path);
+(() => {
+  const OWNER = '7890i';
+  const REPO = 'newyear2027-miniapp-3.';
+  const BRANCH = 'main';
+  const groups = [
+    {id:'common', name:'Обычные', label:'🟢 Обычные', price:50, color:'#9cdda9', paths:['gifts/common','common'], emoji:'🎁'},
+    {id:'rare', name:'Редкие', label:'🔵 Редкие', price:150, color:'#8dbbff', paths:['rare','gifts/rare'], emoji:'💎'},
+    {id:'epic', name:'Эпические', label:'🟣 Эпические', price:200, color:'#c6a0ff', paths:['epic','gifts/epic'], emoji:'🌟'},
+    {id:'legendary', name:'Легендарные', label:'🟡 Легендарные', price:300, color:'#f3d17f', paths:['legendary','gifts/legendary'], emoji:'👑'},
+    {id:'mythic', name:'Мифические', label:'🌈 Мифические', price:350, color:'#f0a8df', paths:['mythic','gifts/mythic'], emoji:'🌌'},
+    {id:'secret', name:'Секретные', label:'💠 Секретные', price:400, color:'#8fe4e6', paths:['secret','gifts/secret'], emoji:'✨'}
+  ];
+  const grid=document.getElementById('grid');
+  const categories=document.getElementById('categories');
+  const search=document.getElementById('search');
+  const empty=document.getElementById('empty');
+  const status=document.getElementById('status');
+  let gifts=[];
+  let active='all';
+
+  function cleanName(filename){
+    return filename.replace(/\.gif$/i,'').replace(/^\d+[_\-\s]*/,'').replace(/[_]+/g,' ').trim() || 'Новогодний подарок';
+  }
+  async function listGifFiles(path){
+    const url=`https://api.github.com/repos/${OWNER}/${encodeURIComponent(REPO)}/contents/${path.split('/').map(encodeURIComponent).join('/')}?ref=${BRANCH}`;
+    const response=await fetch(url,{headers:{Accept:'application/vnd.github+json'}});
+    if(!response.ok) return [];
+    const data=await response.json();
+    if(!Array.isArray(data)) return [];
+    return data.filter(file=>file.type==='file' && /\.gif$/i.test(file.name) && file.download_url)
+      .sort((a,b)=>a.name.localeCompare(b.name,'ru',{numeric:true}));
+  }
+  async function loadGroup(group){
+    for(const path of group.paths){
+      const files=await listGifFiles(path);
       if(files.length){
         return files.map((file,index)=>({
-          id:`${group.id}-${index+1}`,group:group.id,rarity:group.name,label:group.label,
-          color:group.color,name:cleanName(file.name,index),price:group.price,
-          url:file.download_url || `https://raw.githubusercontent.com/${OWNER}/${REPO}/main/${path.split('/').map(encodeURIComponent).join('/')}/${encodeURIComponent(file.name)}`,
-          emoji:group.fallback
+          id:`${group.id}-${index+1}`,group:group.id,rarity:group.name,label:group.label,color:group.color,
+          name:cleanName(file.name),url:file.download_url,price:group.price,emoji:group.emoji
         }));
       }
-    }catch(error){console.warn(`Не удалось прочитать папку ${path}`,error);}
+    }
+    return [];
   }
-  return [];
-}
-function makeButton(text,value){
-  const button=document.createElement('button');
-  button.className='chip'+(active===value?' active':'');button.textContent=text;button.type='button';
-  button.addEventListener('click',()=>{active=value;render();});return button;
-}
-function makeArtwork(gift,large=false){
-  const holder=document.createElement('div');
-  if(gift.url){
-    const img=document.createElement('img');img.src=gift.url;img.alt=gift.name;img.loading=large?'eager':'lazy';img.decoding='async';img.className=large?'':'gift-img';
-    img.addEventListener('error',()=>{const icon=document.createElement('span');icon.className='emoji';icon.textContent=gift.emoji;img.replaceWith(icon);});
-    holder.appendChild(img);
-  }else{const icon=document.createElement('span');icon.className='emoji';icon.textContent=gift.emoji;holder.appendChild(icon);}
-  return holder;
-}
-function render(){
-  categories.replaceChildren(makeButton('🎁 Все','all'),...groups.map(group=>makeButton(group.label,group.id)));
-  const query=search.value.trim().toLocaleLowerCase('ru');
-  const shown=gifts.filter(gift=>(active==='all'||gift.group===active)&&(!query||gift.name.toLocaleLowerCase('ru').includes(query)||gift.rarity.toLocaleLowerCase('ru').includes(query)));
-  const currentGroup=groups.find(group=>group.id===active);
-  document.getElementById('sectionTitle').textContent=active==='all'?'Все подарки':currentGroup.label;
-  document.getElementById('count').textContent=`${shown.length} из ${gifts.length}`;
-  grid.querySelectorAll('.gift').forEach(item=>item.remove());
-  empty.style.display=shown.length?'none':'block';
-  if(!shown.length && gifts.length) empty.textContent='Ничего не найдено. Попробуй другое название.';
-  else if(!shown.length) empty.textContent='GIF пока не найдены. Проверь содержимое папок на GitHub.';
-  shown.forEach(gift=>{
-    const button=document.createElement('button');button.type='button';button.className='gift';
-    const art=document.createElement('div');art.className='art';
-    const rarity=document.createElement('span');rarity.className='rarity-dot';rarity.style.color=gift.color;rarity.textContent=gift.label;
-    const artwork=makeArtwork(gift);art.append(...artwork.childNodes);art.appendChild(rarity);
-    const info=document.createElement('div');info.className='gift-info';
-    const name=document.createElement('div');name.className='gift-name';name.textContent=gift.name;
-    const bottom=document.createElement('div');bottom.className='gift-bottom';
-    const details=document.createElement('span');details.className='details';details.textContent='Посмотреть';
-    const price=document.createElement('span');price.className='price';price.textContent=`${gift.price} ⭐`;
-    bottom.append(details,price);info.append(name,bottom);button.append(art,info);
-    button.addEventListener('click',()=>openGift(gift));grid.insertBefore(button,empty);
-  });
-}
-function openGift(gift){
-  const art=document.getElementById('modalArt');art.replaceChildren();
-  const artwork=makeArtwork(gift,true);art.append(...artwork.childNodes);
-  document.getElementById('modalRarity').textContent=gift.label;
-  document.getElementById('modalName').textContent=gift.name;
-  document.getElementById('modalPrice').textContent=`${gift.price} ⭐`;
-  document.getElementById('modalBackdrop').classList.add('open');
-  if(window.Telegram?.WebApp?.HapticFeedback) Telegram.WebApp.HapticFeedback.selectionChanged();
-}
-function closeGift(){document.getElementById('modalBackdrop').classList.remove('open');}
-search.addEventListener('input',render);
-document.getElementById('closeModal').addEventListener('click',closeGift);
-document.getElementById('modalBackdrop').addEventListener('click',event=>{if(event.target.id==='modalBackdrop')closeGift();});
-document.addEventListener('keydown',event=>{if(event.key==='Escape')closeGift();});
-async function init(){
-  if(window.Telegram?.WebApp){Telegram.WebApp.ready();Telegram.WebApp.expand();}
-  const results=await Promise.all(groups.map(loadGroup));
-  gifts=results.flat();
-  document.getElementById('giftStat').textContent=`🎁 ${gifts.length} GIF загружено`;
-  const found=groups.map((group,index)=>`${group.name}: ${results[index].length}`).join(' · ');
-  if(gifts.length){document.getElementById('status').textContent=`GIF подключены из репозитория · ${found}`;}
-  else{document.getElementById('status').textContent='Не получилось прочитать GIF через GitHub. Проверь, что файлы загружены в репозиторий и имеют расширение .gif.';}
-  render();
-}
-init().catch(error=>{console.error(error);document.getElementById('status').textContent='Не удалось загрузить список GIF. Обнови страницу чуть позже.';render();});
+  function makeButton(text,value){
+    const button=document.createElement('button');
+    button.className='chip'+(active===value?' active':'');
+    button.textContent=text;button.type='button';
+    button.addEventListener('click',()=>{active=value;render();});
+    return button;
+  }
+  function addArt(container,gift,modal=false){
+    container.replaceChildren();
+    const img=document.createElement('img');
+    img.src=gift.url;img.alt=gift.name;img.loading=modal?'eager':'lazy';
+    img.onerror=()=>{img.remove();const fallback=document.createElement('span');fallback.className='art-placeholder';fallback.textContent=gift.emoji;container.append(fallback);};
+    container.append(img);
+  }
+  function render(){
+    categories.replaceChildren(makeButton('🎁 Все','all'),...groups.map(group=>makeButton(group.label,group.id)));
+    const query=search.value.trim().toLocaleLowerCase('ru');
+    const shown=gifts.filter(gift=>(active==='all'||gift.group===active)&&(!query||gift.name.toLocaleLowerCase('ru').includes(query)||gift.rarity.toLocaleLowerCase('ru').includes(query)));
+    document.getElementById('sectionTitle').textContent=active==='all'?'Все подарки':groups.find(group=>group.id===active).label;
+    document.getElementById('count').textContent=`${shown.length} из ${gifts.length}`;
+    grid.querySelectorAll('.gift').forEach(card=>card.remove());
+    empty.style.display=shown.length?'none':'block';
+    shown.forEach(gift=>{
+      const button=document.createElement('button');button.type='button';button.className='gift';
+      button.innerHTML=`<div class="art"><span class="rarity-dot"></span></div><div class="gift-info"><div class="gift-name"></div><div class="gift-bottom"><span class="details">Посмотреть</span><span class="price">${gift.price} ⭐</span></div></div>`;
+      const art=button.querySelector('.art');
+      const dot=button.querySelector('.rarity-dot');dot.textContent=gift.label;dot.style.color=gift.color;
+      addArt(art,gift);
+      button.querySelector('.gift-name').textContent=gift.name;
+      button.addEventListener('click',()=>openGift(gift));
+      grid.insertBefore(button,empty);
+    });
+  }
+  function openGift(gift){
+    const art=document.getElementById('modalArt');addArt(art,gift,true);
+    document.getElementById('modalRarity').textContent=gift.label;
+    document.getElementById('modalName').textContent=gift.name;
+    document.getElementById('modalPrice').textContent=`${gift.price} ⭐`;
+    document.getElementById('modalBackdrop').classList.add('open');
+    if(window.Telegram?.WebApp?.HapticFeedback) window.Telegram.WebApp.HapticFeedback.selectionChanged();
+  }
+  function closeGift(){document.getElementById('modalBackdrop').classList.remove('open');}
+  async function start(){
+    if(window.Telegram?.WebApp){window.Telegram.WebApp.ready();window.Telegram.WebApp.expand();}
+    try{
+      const loaded=await Promise.all(groups.map(loadGroup));
+      gifts=loaded.flat();
+      document.getElementById('giftStat').textContent=`🎁 ${gifts.length} GIF загружено`;
+      const perGroup=groups.map((group,index)=>`${group.name}: ${loaded[index].length}`).join(' · ');
+      if(gifts.length){status.textContent=`Найдено ${gifts.length} GIF. ${perGroup}`;status.className='status';}
+      else {status.textContent='GitHub API не вернул GIF. Проверь, что файлы .gif находятся прямо внутри папок категорий, а репозиторий открыт для просмотра.';status.className='status error';}
+      render();
+    }catch(error){
+      document.getElementById('giftStat').textContent='🎁 Не удалось загрузить GIF';
+      status.textContent='Не удалось прочитать список файлов GitHub. Обнови страницу позже или проверь, что репозиторий публичный.';
+      status.className='status error';
+      render();
+      console.error(error);
+    }
+  }
+  search.addEventListener('input',render);
+  document.getElementById('closeModal').addEventListener('click',closeGift);
+  document.getElementById('modalBackdrop').addEventListener('click',event=>{if(event.target.id==='modalBackdrop')closeGift();});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape')closeGift();});
+  start();
+})();
 </script>
 </body>
 </html>
