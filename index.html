@@ -7,7 +7,7 @@
   <title>New Year Gifts 2027</title>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <style>
-    :root{color-scheme:dark;--bg:#0d1426;--panel:#17223a;--panel2:#202e4a;--text:#f5f7ff;--muted:#aab7d0;--line:rgba(255,255,255,.1);--gold:#f6cf78;--accent:#8db6ff}
+    :root{color-scheme:dark;--bg:#0d1426;--panel:#17223a;--panel2:#202e4a;--text:#f5f7ff;--muted:#aab7d0;--line:rgba(255,255,255,.1);--gold:#f6cf78;--accent:#8db6ff;--green:#a8edc0}
     *{box-sizing:border-box}
     body{margin:0;min-height:100vh;color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(ellipse at 50% -20%,#354b76 0%,#131d34 48%,var(--bg) 80%)}
     button,input{font:inherit}.app{width:min(100%,780px);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 16px max(28px,env(safe-area-inset-bottom))}
@@ -16,14 +16,16 @@
     .eyebrow{color:#d8e4ff;letter-spacing:.16em;text-transform:uppercase;font-size:10px;font-weight:800}h1{margin:9px 0 6px;font-size:clamp(27px,7vw,39px);line-height:1.05;letter-spacing:-.04em}.subtitle{margin:0;color:#d0dcf2;font-size:13px}
     .stats{display:flex;justify-content:center;gap:9px;margin-top:17px;flex-wrap:wrap}.stat{padding:7px 11px;border-radius:999px;background:rgba(9,16,31,.32);color:#edf2ff;font-size:11px;border:1px solid rgba(255,255,255,.1)}
     .status{margin:12px 2px 0;text-align:center;color:var(--muted);font-size:12px;line-height:1.5}.status.error{color:#ffb7b7}
+    .feature{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:15px 0 12px;padding:14px;border-radius:18px;border:1px solid rgba(246,207,120,.26);background:linear-gradient(125deg,rgba(88,62,43,.46),rgba(35,43,66,.9))}.feature-copy{min-width:0}.feature-title{font-weight:850;font-size:14px}.feature-text{margin-top:4px;color:var(--muted);font-size:11px;line-height:1.4}.action-button{flex:none;border:0;border-radius:13px;padding:11px 13px;background:linear-gradient(135deg,#f6d98e,#eab85c);color:#36240b;font-weight:900;font-size:12px;cursor:pointer}.action-button:disabled{opacity:.45;cursor:not-allowed}
     .search-wrap{margin:17px 0 13px;position:relative}.search{width:100%;border:1px solid var(--line);border-radius:15px;padding:13px 15px 13px 42px;color:var(--text);background:rgba(23,34,58,.92);outline:none}.search:focus{border-color:rgba(141,182,255,.7)}.search-icon{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--muted)}
     .categories{display:flex;gap:8px;overflow-x:auto;padding:2px 0 10px;scrollbar-width:none}.categories::-webkit-scrollbar{display:none}.chip{white-space:nowrap;border:1px solid var(--line);color:#d9e2f5;background:rgba(23,34,58,.84);padding:9px 12px;border-radius:999px;font-size:12px;cursor:pointer}.chip.active{color:#13213c;background:#dbe7ff;border-color:#dbe7ff;font-weight:800}
     .section-head{display:flex;justify-content:space-between;align-items:center;margin:12px 2px 11px;gap:12px}.section-head h2{margin:0;font-size:17px}.count{color:var(--muted);font-size:11px}
     .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.gift{min-width:0;text-align:left;padding:0;overflow:hidden;border:1px solid var(--line);border-radius:19px;background:linear-gradient(160deg,rgba(31,46,75,.98),rgba(20,30,51,.98));color:var(--text);cursor:pointer;transition:transform .15s,border-color .15s}.gift:active{transform:scale(.98)}
     .art{height:160px;display:grid;place-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 42%,rgba(125,161,224,.24),rgba(18,29,50,.15) 67%)}.art img{width:100%;height:100%;object-fit:contain;padding:8px}.art-placeholder{font-size:65px;filter:drop-shadow(0 9px 11px rgba(0,0,0,.28))}
-    .rarity-dot{position:absolute;top:10px;left:10px;padding:5px 8px;border-radius:999px;font-size:10px;font-weight:800;background:rgba(7,14,27,.72);border:1px solid var(--line)}.gift-info{padding:11px 12px 12px}.gift-name{font-size:13px;line-height:1.25;font-weight:750;min-height:33px}.gift-bottom{display:flex;justify-content:space-between;align-items:center;gap:6px;margin-top:9px}.price{color:var(--gold);font-size:13px;font-weight:850;white-space:nowrap}.details{color:var(--muted);font-size:10px}.empty{display:none;grid-column:1/-1;text-align:center;color:var(--muted);padding:32px 12px;border:1px dashed var(--line);border-radius:18px}
-    .note{margin:18px 2px 0;color:var(--muted);font-size:11px;line-height:1.5;text-align:center}.modal-backdrop{display:none;position:fixed;inset:0;z-index:10;padding:18px;align-items:center;justify-content:center;background:rgba(3,8,18,.76);backdrop-filter:blur(7px)}.modal-backdrop.open{display:flex}.modal{width:min(100%,390px);border:1px solid var(--line);border-radius:24px;padding:20px;background:#17233b;box-shadow:0 24px 80px rgba(0,0,0,.45);text-align:center}.modal-art{height:210px;display:grid;place-items:center;margin-bottom:10px}.modal-art img{max-width:100%;max-height:100%;object-fit:contain}.modal-art .art-placeholder{font-size:82px}.modal h3{margin:3px 0 7px;font-size:21px}.modal-rarity{color:#c4d5f6;font-size:12px}.modal-price{color:var(--gold);font-weight:900;font-size:18px;margin:12px 0}.modal-note{color:var(--muted);font-size:12px;line-height:1.5}.close{margin-top:17px;border:0;border-radius:13px;padding:11px 20px;color:#17233b;background:#dbe7ff;font-weight:800;cursor:pointer;width:100%}
+    .rarity-dot{position:absolute;top:10px;left:10px;padding:5px 8px;border-radius:999px;font-size:10px;font-weight:800;background:rgba(7,14,27,.72);border:1px solid var(--line)}.gift-info{padding:11px 12px 12px}.gift-name{font-size:13px;line-height:1.25;font-weight:750;min-height:33px}.gift-bottom{display:flex;justify-content:space-between;align-items:center;gap:6px;margin-top:9px}.price{color:var(--gold);font-size:12px;font-weight:850;white-space:nowrap}.details{color:var(--muted);font-size:10px}.empty{display:none;grid-column:1/-1;text-align:center;color:var(--muted);padding:32px 12px;border:1px dashed var(--line);border-radius:18px}
+    .note{margin:18px 2px 0;color:var(--muted);font-size:11px;line-height:1.5;text-align:center}.modal-backdrop{display:none;position:fixed;inset:0;z-index:10;padding:18px;align-items:center;justify-content:center;background:rgba(3,8,18,.76);backdrop-filter:blur(7px)}.modal-backdrop.open{display:flex}.modal{width:min(100%,390px);border:1px solid var(--line);border-radius:24px;padding:20px;background:#17233b;box-shadow:0 24px 80px rgba(0,0,0,.45);text-align:center}.modal-art{height:210px;display:grid;place-items:center;margin-bottom:10px}.modal-art img{max-width:100%;max-height:100%;object-fit:contain}.modal-art .art-placeholder{font-size:82px}.modal h3{margin:3px 0 7px;font-size:21px}.modal-rarity{color:#c4d5f6;font-size:12px}.modal-price{color:var(--gold);font-weight:900;font-size:18px;margin:12px 0}.modal-note{color:var(--muted);font-size:12px;line-height:1.5}.modal-action{display:none;margin-top:15px;width:100%;border:0;border-radius:13px;padding:12px 16px;color:#102b20;background:linear-gradient(135deg,#a8edc0,#65d99b);font-weight:900;cursor:pointer}.modal-action.visible{display:block}.modal-action.alt{color:#35240b;background:linear-gradient(135deg,#f6d98e,#eab85c)}.action-status{min-height:18px;margin:10px 0 0;color:#a8edc0;font-size:12px;line-height:1.45}.close{margin-top:17px;border:0;border-radius:13px;padding:11px 20px;color:#17233b;background:#dbe7ff;font-weight:800;cursor:pointer;width:100%}
     @media(min-width:600px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.art{height:180px}}
+    @media(max-width:430px){.feature{align-items:flex-start;flex-direction:column}.feature .action-button{width:100%}}
   </style>
 </head>
 <body>
@@ -32,44 +34,53 @@
     <div class="eyebrow">праздничная коллекция</div>
     <h1>🎄 New Year 2027</h1>
     <p class="subtitle">Маленькие чудеса большой зимы</p>
-    <div class="stats"><span class="stat" id="giftStat">🎁 Загружаем подарки…</span><span class="stat">✦ 6 редкостей</span><span class="stat">⭐ Цены для витрины</span></div>
+    <div class="stats"><span class="stat" id="giftStat">🎁 Загружаем подарки…</span><span class="stat">✦ 6 редкостей</span><span class="stat">🎁 Бесплатные демо-награды</span></div>
   </header>
-  <p class="status" id="status" role="status">Ищем GIF в папках твоего GitHub-репозитория…</p>
+  <p class="status" id="status" role="status">Ищем GIF в папках GitHub-репозитория…</p>
+  <section class="feature" aria-label="Бесплатная рулетка">
+    <div class="feature-copy"><div class="feature-title">🏠 Дом Щелкунчика</div><div class="feature-text">Бесплатная праздничная рулетка: можно получить один эпический подарок в демо-коллекции. Без ставок и оплаты.</div></div>
+    <button class="action-button" id="spinButton" type="button" disabled>🎡 Крутить бесплатно</button>
+  </section>
   <div class="search-wrap"><span class="search-icon">⌕</span><input id="search" class="search" type="search" placeholder="Найти подарок…" autocomplete="off" aria-label="Найти подарок"></div>
   <nav class="categories" id="categories" aria-label="Категории"></nav>
   <div class="section-head"><h2 id="sectionTitle">Все подарки</h2><span class="count" id="count"></span></div>
   <section class="grid" id="grid" aria-live="polite"><div class="empty" id="empty">Подарки пока не найдены.</div></section>
-  <p class="note">Демонстрационная витрина. Цены указаны только для примера. Здесь нет оплаты и списания Stars.</p>
+  <p class="note">Демонстрационная витрина. «299 ₽» и «699 ₽» — только подписи-примеры: оплаты, списания денег и реальной отправки подарков здесь нет. Бесплатные действия тоже сохраняются только как демо на этом устройстве.</p>
 </main>
 <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalName">
-  <div class="modal"><div class="modal-art" id="modalArt"></div><div class="modal-rarity" id="modalRarity"></div><h3 id="modalName"></h3><div class="modal-price" id="modalPrice"></div><p class="modal-note">Это демонстрационная карточка подарка. Покупка и оплата не подключены.</p><button class="close" id="closeModal" type="button">Закрыть</button></div>
+  <div class="modal"><div class="modal-art" id="modalArt"></div><div class="modal-rarity" id="modalRarity"></div><h3 id="modalName"></h3><div class="modal-price" id="modalPrice"></div><p class="modal-note" id="modalNote"></p><button class="modal-action" id="modalAction" type="button"></button><p class="action-status" id="actionStatus" aria-live="polite"></p><button class="close" id="closeModal" type="button">Закрыть</button></div>
 </div>
 <script>
 (() => {
+  // The public repository paths are kept aligned with the current project layout:
+  // common is in gifts/common; the other five categories are at repository root.
   const OWNER = '7890i';
   const REPO = 'newyear2027-miniapp-3.';
   const BRANCH = 'main';
   const groups = [
-    {id:'common', name:'Обычные', label:'🟢 Обычные', price:50, color:'#9cdda9', paths:['gifts/common','common'], emoji:'🎁'},
-    {id:'rare', name:'Редкие', label:'🔵 Редкие', price:150, color:'#8dbbff', paths:['rare','gifts/rare'], emoji:'💎'},
-    {id:'epic', name:'Эпические', label:'🟣 Эпические', price:200, color:'#c6a0ff', paths:['epic','gifts/epic'], emoji:'🌟'},
-    {id:'legendary', name:'Легендарные', label:'🟡 Легендарные', price:300, color:'#f3d17f', paths:['legendary','gifts/legendary'], emoji:'👑'},
-    {id:'mythic', name:'Мифические', label:'🌈 Мифические', price:350, color:'#f0a8df', paths:['mythic','gifts/mythic'], emoji:'🌌'},
-    {id:'secret', name:'Секретные', label:'💠 Секретные', price:400, color:'#8fe4e6', paths:['secret','gifts/secret'], emoji:'✨'}
+    {id:'common',name:'Обычные',label:'🟢 Обычные',priceLabel:'БЕСПЛАТНО',access:'free',accessLabel:'Получить бесплатно',color:'#9cdda9',paths:['gifts/common','common'],emoji:'🎁'},
+    {id:'rare',name:'Редкие',label:'🔵 Редкие',priceLabel:'БЕСПЛАТНО',access:'free',accessLabel:'Получить бесплатно',color:'#8dbbff',paths:['rare','gifts/rare'],emoji:'💎'},
+    {id:'epic',name:'Эпические',label:'🟣 Эпические',priceLabel:'🎡 Рулетка',access:'roulette',accessLabel:'Рулетка в Доме Щелкунчика',color:'#c6a0ff',paths:['epic','gifts/epic'],emoji:'🌟'},
+    {id:'legendary',name:'Легендарные',label:'🟡 Легендарные',priceLabel:'🔗 Приглашение',access:'referral',accessLabel:'За приглашение друга',color:'#f3d17f',paths:['legendary','gifts/legendary'],emoji:'👑'},
+    {id:'mythic',name:'Мифические',label:'🌈 Мифические',priceLabel:'299 ₽ · демо',access:'demo-price',accessLabel:'Демо-цена',color:'#f0a8df',paths:['mythic','gifts/mythic'],emoji:'🌌'},
+    {id:'secret',name:'Секретные',label:'💠 Секретные',priceLabel:'699 ₽ · демо',access:'demo-price',accessLabel:'Демо-цена',color:'#8fe4e6',paths:['secret','gifts/secret'],emoji:'✨'}
   ];
   const grid=document.getElementById('grid');
   const categories=document.getElementById('categories');
   const search=document.getElementById('search');
   const empty=document.getElementById('empty');
   const status=document.getElementById('status');
+  const modalAction=document.getElementById('modalAction');
   let gifts=[];
   let active='all';
+  let currentGift=null;
 
   function cleanName(filename){
     return filename.replace(/\.gif$/i,'').replace(/^\d+[_\-\s]*/,'').replace(/[_]+/g,' ').trim() || 'Новогодний подарок';
   }
   async function listGifFiles(path){
-    const url=`https://api.github.com/repos/${OWNER}/${encodeURIComponent(REPO)}/contents/${path.split('/').map(encodeURIComponent).join('/')}?ref=${BRANCH}`;
+    const encodedPath=path.split('/').map(encodeURIComponent).join('/');
+    const url=`https://api.github.com/repos/${OWNER}/${encodeURIComponent(REPO)}/contents/${encodedPath}?ref=${BRANCH}`;
     const response=await fetch(url,{headers:{Accept:'application/vnd.github+json'}});
     if(!response.ok) return [];
     const data=await response.json();
@@ -83,7 +94,7 @@
       if(files.length){
         return files.map((file,index)=>({
           id:`${group.id}-${index+1}`,group:group.id,rarity:group.name,label:group.label,color:group.color,
-          name:cleanName(file.name),url:file.download_url,price:group.price,emoji:group.emoji
+          name:cleanName(file.name),url:file.download_url,access:group.access,priceLabel:group.priceLabel,accessLabel:group.accessLabel,emoji:group.emoji
         }));
       }
     }
@@ -96,10 +107,10 @@
     button.addEventListener('click',()=>{active=value;render();});
     return button;
   }
-  function addArt(container,gift,modal=false){
+  function addArt(container,gift){
     container.replaceChildren();
     const img=document.createElement('img');
-    img.src=gift.url;img.alt=gift.name;img.loading=modal?'eager':'lazy';
+    img.src=gift.url;img.alt=gift.name;img.loading='lazy';
     img.onerror=()=>{img.remove();const fallback=document.createElement('span');fallback.className='art-placeholder';fallback.textContent=gift.emoji;container.append(fallback);};
     container.append(img);
   }
@@ -113,38 +124,88 @@
     empty.style.display=shown.length?'none':'block';
     shown.forEach(gift=>{
       const button=document.createElement('button');button.type='button';button.className='gift';
-      button.innerHTML=`<div class="art"><span class="rarity-dot"></span></div><div class="gift-info"><div class="gift-name"></div><div class="gift-bottom"><span class="details">Посмотреть</span><span class="price">${gift.price} ⭐</span></div></div>`;
+      button.innerHTML='<div class="art"><span class="rarity-dot"></span></div><div class="gift-info"><div class="gift-name"></div><div class="gift-bottom"><span class="details"></span><span class="price"></span></div></div>';
       const art=button.querySelector('.art');
       const dot=button.querySelector('.rarity-dot');dot.textContent=gift.label;dot.style.color=gift.color;
       addArt(art,gift);
       button.querySelector('.gift-name').textContent=gift.name;
+      button.querySelector('.details').textContent=gift.accessLabel;
+      button.querySelector('.price').textContent=gift.priceLabel;
       button.addEventListener('click',()=>openGift(gift));
       grid.insertBefore(button,empty);
     });
   }
-  function openGift(gift){
-    const art=document.getElementById('modalArt');addArt(art,gift,true);
+  function setAction(label,kind,handler){
+    modalAction.textContent=label;
+    modalAction.className='modal-action visible'+(kind==='gold'?' alt':'');
+    modalAction.onclick=handler;
+  }
+  function hideAction(){modalAction.className='modal-action';modalAction.onclick=null;}
+  function showModal(gift,note){
+    currentGift=gift;
+    addArt(document.getElementById('modalArt'),gift);
     document.getElementById('modalRarity').textContent=gift.label;
     document.getElementById('modalName').textContent=gift.name;
-    document.getElementById('modalPrice').textContent=`${gift.price} ⭐`;
+    document.getElementById('modalPrice').textContent=gift.priceLabel;
+    document.getElementById('modalNote').textContent=note;
+    document.getElementById('actionStatus').textContent='';
     document.getElementById('modalBackdrop').classList.add('open');
     if(window.Telegram?.WebApp?.HapticFeedback) window.Telegram.WebApp.HapticFeedback.selectionChanged();
+  }
+  function openGift(gift){
+    let note='';
+    if(gift.access==='free') note='Этот подарок доступен бесплатно в демо-раздаче. Нажатие отметит его только в этой демо-версии на данном устройстве.';
+    else if(gift.access==='roulette') note='Эпический подарок можно получить через бесплатную демо-рулетку в Доме Щелкунчика. Никакой оплаты или ставок нет.';
+    else if(gift.access==='referral') note='Легендарные подарки задуманы как награда за приглашение друга. Сейчас ссылка только демонстрационная: приглашения не отслеживаются и автоматической выдачи пока нет.';
+    else note='Это пример цены для макета: '+gift.priceLabel+'. Оплата, покупка и списание денег не подключены.';
+    showModal(gift,note);
+    if(gift.access==='free'){
+      setAction('🎁 Получить бесплатно · демо','green',()=>{
+        const key='ny2027_demo_claims';
+        let claims=[];try{claims=JSON.parse(localStorage.getItem(key)||'[]');}catch{}
+        if(!claims.includes(gift.id)){claims.push(gift.id);localStorage.setItem(key,JSON.stringify(claims));}
+        document.getElementById('actionStatus').textContent=`✓ ${gift.name} отмечен в твоей демо-коллекции на этом устройстве.`;
+      });
+    }else if(gift.access==='roulette'){
+      setAction('🎡 Открыть Дом Щелкунчика','gold',spinRoulette);
+    }else if(gift.access==='referral'){
+      setAction('🔗 Поделиться демо-ссылкой','gold',shareInvite);
+    }else hideAction();
+  }
+  function spinRoulette(){
+    const epicGifts=gifts.filter(gift=>gift.group==='epic');
+    if(!epicGifts.length){document.getElementById('actionStatus').textContent='Пока не удалось найти GIF из папки epic.';return;}
+    const selected=epicGifts[Math.floor(Math.random()*epicGifts.length)];
+    showModal(selected,'🎉 В бесплатной демо-рулетке Дома Щелкунчика выпал этот эпический подарок! Это игровой результат на экране; реальная выдача в Telegram не выполняется.');
+    setAction('🎡 Крутить ещё раз · бесплатно','gold',spinRoulette);
+    document.getElementById('actionStatus').textContent='Демо-рулетка бесплатная и не использует деньги, Stars или ставки.';
+  }
+  function shareInvite(){
+    const shareUrl=window.location.origin+window.location.pathname;
+    const text='Посмотри новогоднюю коллекцию New Year 2027!';
+    const url='https://t.me/share/url?url='+encodeURIComponent(shareUrl)+'&text='+encodeURIComponent(text);
+    document.getElementById('actionStatus').textContent='Откроется Telegram для отправки ссылки. Приглашения пока не проверяются автоматически.';
+    if(window.Telegram?.WebApp?.openTelegramLink) window.Telegram.WebApp.openTelegramLink(url);
+    else window.open(url,'_blank','noopener,noreferrer');
   }
   function closeGift(){document.getElementById('modalBackdrop').classList.remove('open');}
   async function start(){
     if(window.Telegram?.WebApp){window.Telegram.WebApp.ready();window.Telegram.WebApp.expand();}
+    document.getElementById('spinButton').addEventListener('click',spinRoulette);
     try{
       const loaded=await Promise.all(groups.map(loadGroup));
       gifts=loaded.flat();
       document.getElementById('giftStat').textContent=`🎁 ${gifts.length} GIF загружено`;
       const perGroup=groups.map((group,index)=>`${group.name}: ${loaded[index].length}`).join(' · ');
       if(gifts.length){status.textContent=`Найдено ${gifts.length} GIF. ${perGroup}`;status.className='status';}
-      else {status.textContent='GitHub API не вернул GIF. Проверь, что файлы .gif находятся прямо внутри папок категорий, а репозиторий открыт для просмотра.';status.className='status error';}
+      else {status.textContent='GitHub API не вернул GIF. Проверь, что файлы .gif лежат прямо внутри папок категорий и репозиторий публичный.';status.className='status error';}
+      document.getElementById('spinButton').disabled=!loaded[2].length;
       render();
     }catch(error){
       document.getElementById('giftStat').textContent='🎁 Не удалось загрузить GIF';
-      status.textContent='Не удалось прочитать список файлов GitHub. Обнови страницу позже или проверь, что репозиторий публичный.';
+      status.textContent='Не удалось прочитать список файлов GitHub. Проверь, что репозиторий публичный.';
       status.className='status error';
+      document.getElementById('spinButton').disabled=true;
       render();
       console.error(error);
     }
