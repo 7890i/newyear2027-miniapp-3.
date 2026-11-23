@@ -1,108 +1,171 @@
-<!doctype html>
-<html lang="ru">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#10182c">
-  <title>New Year Gifts 2027</title>
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <style>
-    :root { color-scheme: dark; --bg:#0d1426; --panel:#17223a; --panel2:#202e4a; --text:#f5f7ff; --muted:#aab7d0; --line:rgba(255,255,255,.10); --gold:#f6cf78; --accent:#8db6ff; }
-    * { box-sizing:border-box; }
-    body { margin:0; min-height:100vh; color:var(--text); font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif; background:radial-gradient(ellipse at 50% -20%,#354b76 0%,#131d34 48%,var(--bg) 80%); }
-    button,input { font:inherit; }
-    .app { width:min(100%,760px); margin:0 auto; padding: max(18px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom)); }
-    .hero { position:relative; overflow:hidden; text-align:center; padding:27px 18px 23px; border:1px solid var(--line); border-radius:26px; background:linear-gradient(140deg,rgba(61,91,142,.55),rgba(29,42,70,.76)); box-shadow:0 18px 60px rgba(0,0,0,.22); }
-    .hero:before,.hero:after { content:"✦"; position:absolute; color:rgba(255,255,255,.28); font-size:25px; }
-    .hero:before { left:22px; top:25px; } .hero:after { right:26px; bottom:22px; }
-    .eyebrow { color:#d8e4ff; letter-spacing:.16em; text-transform:uppercase; font-size:10px; font-weight:800; }
-    h1 { margin:9px 0 6px; font-size:clamp(27px,7vw,39px); line-height:1.05; letter-spacing:-.04em; }
-    .subtitle { margin:0; color:#d0dcf2; font-size:13px; }
-    .stats { display:flex; justify-content:center; gap:9px; margin-top:17px; flex-wrap:wrap; }
-    .stat { padding:7px 11px; border-radius:999px; background:rgba(9,16,31,.32); color:#edf2ff; font-size:11px; border:1px solid rgba(255,255,255,.10); }
-    .search-wrap { margin:17px 0 13px; position:relative; }
-    .search { width:100%; border:1px solid var(--line); border-radius:15px; padding:13px 15px 13px 42px; color:var(--text); background:rgba(23,34,58,.92); outline:none; }
-    .search:focus { border-color:rgba(141,182,255,.7); }
-    .search-icon { position:absolute; left:15px; top:50%; transform:translateY(-50%); color:var(--muted); }
-    .categories { display:flex; gap:8px; overflow-x:auto; padding:2px 0 10px; scrollbar-width:none; }
-    .categories::-webkit-scrollbar { display:none; }
-    .chip { white-space:nowrap; border:1px solid var(--line); color:#d9e2f5; background:rgba(23,34,58,.84); padding:9px 12px; border-radius:999px; font-size:12px; cursor:pointer; }
-    .chip.active { color:#13213c; background:#dbe7ff; border-color:#dbe7ff; font-weight:800; }
-    .section-head { display:flex; justify-content:space-between; align-items:center; margin:12px 2px 11px; gap:12px; }
-    .section-head h2 { margin:0; font-size:17px; }
-    .count { color:var(--muted); font-size:11px; }
-    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:11px; }
-    .gift { min-width:0; text-align:left; padding:0; overflow:hidden; border:1px solid var(--line); border-radius:19px; background:linear-gradient(160deg,rgba(31,46,75,.98),rgba(20,30,51,.98)); color:var(--text); cursor:pointer; transition:transform .15s,border-color .15s; }
-    .gift:active { transform:scale(.98); }
-    .art { min-height:132px; display:grid; place-items:center; position:relative; background:radial-gradient(circle at 50% 42%,rgba(125,161,224,.24),rgba(18,29,50,.15) 67%); }
-    .emoji { font-size:65px; filter:drop-shadow(0 9px 11px rgba(0,0,0,.28)); }
-    .rarity-dot { position:absolute; top:10px; left:10px; padding:5px 8px; border-radius:999px; font-size:10px; font-weight:800; background:rgba(7,14,27,.56); border:1px solid var(--line); }
-    .gift-info { padding:11px 12px 12px; }
-    .gift-name { font-size:13px; line-height:1.25; font-weight:750; min-height:33px; }
-    .gift-bottom { display:flex; justify-content:space-between; align-items:center; gap:6px; margin-top:9px; }
-    .price { color:var(--gold); font-size:13px; font-weight:850; white-space:nowrap; }
-    .details { color:var(--muted); font-size:10px; }
-    .empty { display:none; grid-column:1/-1; text-align:center; color:var(--muted); padding:32px 12px; border:1px dashed var(--line); border-radius:18px; }
-    .note { margin:18px 2px 0; color:var(--muted); font-size:11px; line-height:1.5; text-align:center; }
-    .modal-backdrop { display:none; position:fixed; inset:0; z-index:10; padding:18px; align-items:center; justify-content:center; background:rgba(3,8,18,.76); backdrop-filter:blur(7px); }
-    .modal-backdrop.open { display:flex; }
-    .modal { width:min(100%,390px); border:1px solid var(--line); border-radius:24px; padding:20px; background:#17233b; box-shadow:0 24px 80px rgba(0,0,0,.45); text-align:center; }
-    .modal-art { font-size:82px; padding:8px 0 13px; }
-    .modal h3 { margin:3px 0 7px; font-size:21px; }
-    .modal-rarity { color:#c4d5f6; font-size:12px; }
-    .modal-price { color:var(--gold); font-weight:900; font-size:18px; margin:12px 0; }
-    .modal-note { color:var(--muted); font-size:12px; line-height:1.5; }
-    .close { margin-top:17px; border:0; border-radius:13px; padding:11px 20px; color:#17233b; background:#dbe7ff; font-weight:800; cursor:pointer; width:100%; }
-    @media(min-width:600px) { .grid { grid-template-columns:repeat(3,minmax(0,1fr)); } .art { min-height:150px; } }
-  </style>
-</head>
-<body>
-  <main class="app">
-    <header class="hero">
-      <div class="eyebrow">праздничная коллекция</div>
-      <h1>🎄 New Year 2027</h1>
-      <p class="subtitle">Маленькие чудеса большой зимы</p>
-      <div class="stats"><span class="stat">🎁 30 подарков</span><span class="stat">✦ 6 редкостей</span><span class="stat">⭐ Цены для витрины</span></div>
-    </header>
-    <div class="search-wrap"><span class="search-icon">⌕</span><input id="search" class="search" type="search" placeholder="Найти подарок…" autocomplete="off" aria-label="Найти подарок"></div>
-    <nav class="categories" id="categories" aria-label="Категории"></nav>
-    <div class="section-head"><h2 id="sectionTitle">Все подарки</h2><span class="count" id="count"></span></div>
-    <section class="grid" id="grid" aria-live="polite"><div class="empty" id="empty">Ничего не найдено. Попробуй другое название.</div></section>
-    <p class="note">Демонстрационная витрина. Цены указаны только для примера и не являются предложением покупки. Здесь нет оплаты и списания Stars.</p>
-  </main>
-  <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalName">
-    <div class="modal"><div class="modal-art" id="modalEmoji">🎁</div><div class="modal-rarity" id="modalRarity"></div><h3 id="modalName"></h3><div class="modal-price" id="modalPrice"></div><p class="modal-note">Это демонстрационная карточка подарка. Покупка и оплата не подключены.</p><button class="close" id="closeModal" type="button">Закрыть</button></div>
-  </div>
-  <script>
-    const groups = [
-      {id:'common', name:'Common', label:'🟢 Common', price:50, color:'#9cdda9', items:[['Ёлочная игрушка','🎄'],['Снежинка','❄️'],['Карамельная трость','🍬'],['Мандарин','🍊'],['Свечка','🕯️']]},
-      {id:'rare', name:'Rare', label:'🔵 Rare', price:150, color:'#8dbbff', items:[['Подарочная коробка','🎁'],['Колокольчик','🔔'],['Новогодний носок','🧦'],['Снежный шар','🌨️'],['Венок','💚']]},
-      {id:'epic', name:'Epic', label:'🟣 Epic', price:200, color:'#c6a0ff', items:[['Волшебная звезда','🌟'],['Кристалл льда','💎'],['Золотой шар','🟡'],['Сани','🛷'],['Снежная корона','👑']]},
-      {id:'legendary', name:'Legendary', label:'🟡 Legendary', price:300, color:'#f3d17f', items:[['Часы полуночи','🕛'],['Золотая ёлка','🎄'],['Королевский подарок','🎁'],['Золотой колокол','🔔'],['Звезда желаний','⭐']]},
-      {id:'mythic', name:'Mythic', label:'🌈 Mythic', price:350, color:'#f0a8df', items:[['Радужный подарок','🌈'],['Космическая ёлка','🪐'],['Ледяной феникс','🪽'],['Звёздный шар','✨'],['Северное сияние','🌌']]},
-      {id:'secret', name:'Secret', label:'💠 Secret', price:400, color:'#8fe4e6', items:[['Секретный кейс 2027','🧊'],['Алмаз вечности','💠'],['Коробка из космоса','🛸'],['Скрытая звезда','🌠'],['Абсолютный подарок','🎀']]}
-    ];
-    const gifts = groups.flatMap(g => g.items.map((it,i)=>({id:`${g.id}-${i+1}`,group:g.id,rarity:g.name,label:g.label,color:g.color,name:it[0],emoji:it[1],price:g.price})));
-    const grid=document.getElementById('grid'), categories=document.getElementById('categories'), search=document.getElementById('search');
-    const empty=document.getElementById('empty'); let active='all';
-    function makeButton(text,value){const b=document.createElement('button');b.className='chip'+(active===value?' active':'');b.textContent=text;b.type='button';b.addEventListener('click',()=>{active=value;render();});return b;}
-    function render(){
-      categories.replaceChildren(makeButton('🎁 Все', 'all'),...groups.map(g=>makeButton(g.label,g.id)));
-      const q=search.value.trim().toLocaleLowerCase('ru');
-      const shown=gifts.filter(g=>(active==='all'||g.group===active)&&(!q||g.name.toLocaleLowerCase('ru').includes(q)||g.rarity.toLocaleLowerCase('ru').includes(q)));
-      document.getElementById('sectionTitle').textContent=active==='all'?'Все подарки':groups.find(g=>g.id===active).label;
-      document.getElementById('count').textContent=`${shown.length} из 30`;
-      grid.querySelectorAll('.gift').forEach(x=>x.remove()); empty.style.display=shown.length?'none':'block';
-      shown.forEach(g=>{
-        const btn=document.createElement('button');btn.type='button';btn.className='gift';btn.innerHTML=`<div class="art"><span class="rarity-dot" style="color:${g.color}">${g.label}</span><span class="emoji" aria-hidden="true">${g.emoji}</span></div><div class="gift-info"><div class="gift-name"></div><div class="gift-bottom"><span class="details">Посмотреть</span><span class="price">${g.price} ⭐</span></div></div>`;
-        btn.querySelector('.gift-name').textContent=g.name;btn.addEventListener('click',()=>openGift(g));grid.insertBefore(btn,empty);
-      });
-    }
-    function openGift(g){document.getElementById('modalEmoji').textContent=g.emoji;document.getElementById('modalRarity').textContent=g.label;document.getElementById('modalName').textContent=g.name;document.getElementById('modalPrice').textContent=`${g.price} ⭐`;document.getElementById('modalBackdrop').classList.add('open');if(window.Telegram?.WebApp?.HapticFeedback)Telegram.WebApp.HapticFeedback.selectionChanged();}
-    function closeGift(){document.getElementById('modalBackdrop').classList.remove('open');}
-    search.addEventListener('input',render);document.getElementById('closeModal').addEventListener('click',closeGift);document.getElementById('modalBackdrop').addEventListener('click',e=>{if(e.target.id==='modalBackdrop')closeGift();});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeGift();});
-    if(window.Telegram?.WebApp){Telegram.WebApp.ready();Telegram.WebApp.expand();}
-    render();
-  </script>
-</body>
-</html>
+праздничная коллекция
+🎄 New Year 2027
+Маленькие чудеса большой зимы
+
+🎁 30 GIF загружено
+✦ 6 редкостей
+⭐ Цены для витрины
+GIF подключены из репозитория · Common: 5 · Rare: 5 · Epic: 5 · Legendary: 5 · Mythic: 5 · Secret: 5
+
+⌕
+Найти подарок…
+🎁 Все
+🟢 Common
+🔵 Rare
+🟣 Epic
+🟡 Legendary
+🌈 Mythic
+💠 Secret
+Все подарки
+30 из 30
+
+Снежинка🟢 Common
+Снежинка
+Посмотреть
+50 ⭐
+
+Мандарин🟢 Common
+Мандарин
+Посмотреть
+50 ⭐
+
+Шарик🟢 Common
+Шарик
+Посмотреть
+50 ⭐
+
+Колокольчик🟢 Common
+Колокольчик
+Посмотреть
+50 ⭐
+
+Конфета🟢 Common
+Конфета
+Посмотреть
+50 ⭐
+
+Ёлочная игрушка🔵 Rare
+Ёлочная игрушка
+Посмотреть
+150 ⭐
+
+Подарок🔵 Rare
+Подарок
+Посмотреть
+150 ⭐
+
+Варежки🔵 Rare
+Варежки
+Посмотреть
+150 ⭐
+
+Сапожок🔵 Rare
+Сапожок
+Посмотреть
+150 ⭐
+
+Свеча🔵 Rare
+Свеча
+Посмотреть
+150 ⭐
+
+Снежный шар🟣 Epic
+Снежный шар
+Посмотреть
+200 ⭐
+
+Венок🟣 Epic
+Венок
+Посмотреть
+200 ⭐
+
+Звезда🟣 Epic
+Звезда
+Посмотреть
+200 ⭐
+
+Часы полуночи🟣 Epic
+Часы полуночи
+Посмотреть
+200 ⭐
+
+Пряничный домик🟣 Epic
+Пряничный домик
+Посмотреть
+200 ⭐
+
+Ёлка 2027🟡 Legendary
+Ёлка 2027
+Посмотреть
+300 ⭐
+
+Сани🟡 Legendary
+Сани
+Посмотреть
+300 ⭐
+
+Снеговик🟡 Legendary
+Снеговик
+Посмотреть
+300 ⭐
+
+Олень🟡 Legendary
+Олень
+Посмотреть
+300 ⭐
+
+Фонарь🟡 Legendary
+Фонарь
+Посмотреть
+300 ⭐
+
+Золотой подарок🌈 Mythic
+Золотой подарок
+Посмотреть
+350 ⭐
+
+Ледяная корона🌈 Mythic
+Ледяная корона
+Посмотреть
+350 ⭐
+
+Северное сияние🌈 Mythic
+Северное сияние
+Посмотреть
+350 ⭐
+
+Магический шар🌈 Mythic
+Магический шар
+Посмотреть
+350 ⭐
+
+Кристалл🌈 Mythic
+Кристалл
+Посмотреть
+350 ⭐
+
+Космическая ёлка💠 Secret
+Космическая ёлка
+Посмотреть
+400 ⭐
+
+Механический снег💠 Secret
+Механический снег
+Посмотреть
+400 ⭐
+
+Сияющий портал💠 Secret
+Сияющий портал
+Посмотреть
+400 ⭐
+
+Золотой ключ💠 Secret
+Золотой ключ
+Посмотреть
+400 ⭐
+
+Артефакт 2027💠 Secret
+Артефакт 2027
+Посмотреть
+400 ⭐
+Демонстрационная витрина. Цены указаны только для примера. Здесь нет покупок, оплаты или списания Stars.
